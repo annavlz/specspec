@@ -1,0 +1,23 @@
+{
+  "name": "specspec",
+  "version": "0.1.0",
+  "description": "Swagger validator",
+  "bin": {
+    "spec": "./spec.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annavlz/specspec.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annavlz/specspec/issues"
+  },
+  "dependencies": {
+    "commander": "^2.15.1"
+  }
+}
