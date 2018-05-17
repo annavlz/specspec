@@ -1,0 +1,2 @@
+# specspec
+Swagger validator
