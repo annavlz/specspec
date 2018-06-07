@@ -18,6 +18,8 @@
     "url": "https://github.com/annavlz/specspec/issues"
   },
   "dependencies": {
-    "commander": "^2.15.1"
+    "commander": "^2.15.1",
+    "js-yaml": "^3.11.0",
+    "ramda": "^0.25.0"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "info": {
+    "version": {},
+    "title": {},
+    "description": { "type": "", "minLength": 4 }
+  },
+  "host": { "type": "url" },
+  "produces": { "type": [ ], "minLength": 1 },
+  "consumes": { "type": [ ], "minLength": 1 },
+  "schemes": { "type": [ ], "match": "https" },
+  "basePath": { "type": "", "match": "^\/.*[^\/]?"},
+  "paths": {
+    "type": "multi",
+    "regex": "\/.*",
+    "each": {
+  //     "match": "one of [get, post, put, delete]",
+  //     "get": {
+  //       "description": { "type": "", "minLength": 4 },   
+  //       "responses": {
+  //         "200": {
+  //           "description": {"type": "" },
+  //           "schema": {}
+  //         }
+  //       }
+  //     }
+    } 
+  }
+}
