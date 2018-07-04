@@ -25,7 +25,8 @@ Example:
   "produces": { "type": [ ], "minLength": 1 },
   "consumes": { "type": [ ], "minLength": 1 },
   "schemes": { "type": [ ], "match": "https" },
-  "basePath": { "type": "", "match": "^\/.*[^\/]?"}
+  "basePath": { "type": "", "match": "^\/.*[^\/]?"},
+  "numberCheck": {"type": 1 }
 }
 ```
 
