@@ -8,7 +8,7 @@ const checkWordsLength = (minWords, phrase) => {
     return words.length >= minWords
 }
 
-const checkString = (target, minWords, match) => {
+const checkString = (target, { minWords, match }) => {
     if (typeof(target) != 'string') return "The value has to be a string"
     const correctLength = minWords ? checkWordsLength(minWords, target) : true
     const correctMatch = match ? R.test(new RegExp(match), target) : true
@@ -19,7 +19,7 @@ const checkString = (target, minWords, match) => {
     return result ? "OK" : error
 }
 
-const checkArray = (target, minLength, match) => {
+const checkArray = (target, { minLength, match }) => {
     const correctLength = minLength ? target.length >= minLength : true
     const allMatches = match ? R.any(R.test(new RegExp(match)), target) : true
     const result = correctLength && allMatches
@@ -29,16 +29,17 @@ const checkArray = (target, minLength, match) => {
     return result ? "OK" : error
 }
 
-const applyRule = (spec, key, val) => {
-    const { type, minLength, minWords, match } = val
+const applyRule = (spec, key, rules) => {
+    // const { type, minLength, minWords, match } = val
     const target = spec[key]
+    const { type } = rules
 
     if(!target) return "Missing param"
 
-    if(R.isEmpty(val)) return "OK"
+    if (R.isEmpty(rules)) return "OK"
     
     if(typeof(type) == 'string'){
-        return checkString(target, minWords, match)
+        return checkString(target, rules)
     }
 
     if(typeof(type) == 'number'){
@@ -46,7 +47,7 @@ const applyRule = (spec, key, val) => {
     }
 
     if(Array.isArray(type)){
-        return checkArray(target, minLength, match)
+        return checkArray(target, rules)
     }
 
     return "Unknown error"
