@@ -23,7 +23,6 @@ const rules = [
 
 rules.map(({rule, message}) => {
     const result = validator.run(spec, rule)
-    console.log(JSON.stringify(result))
     console.log(JSON.stringify(result) == message ? "All good" : "Fail")
 })
 

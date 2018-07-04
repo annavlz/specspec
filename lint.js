@@ -11,17 +11,18 @@ function readFileAsync(filename, encoding) {
     });
 }
 
-const readRules = (path) => {
+const read = (path) => {
     return yaml.safeLoad(fs.readFileSync(path, 'utf8'), { json: true })
 }
 
 const command = async (file, cmd) => {
-    const rules = readRules(cmd.rules)
-    const spec = yaml.safeLoad(fs.readFileSync(file, 'utf8'), { json: true })
+    console.log(cmd.rules)
+    const rules = read(cmd.rules)
+    const spec = read(file)
     const results = validator.run(spec, rules)
 
     if(results.length){
-        console.log("errors")
+        console.log(`${results.length} errors`)
         process.exit(1)
     } else {
         console.log("No errors")
@@ -30,5 +31,3 @@ const command = async (file, cmd) => {
 }
 
 module.exports = { command }
-// start with a / not end with / and have something after the /
-
