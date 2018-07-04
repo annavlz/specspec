@@ -2,11 +2,11 @@
   "info": {
     "version": {},
     "title": {},
-    "description": { "type": "", "minLength": 4 }
+    "description": { "type": "", "minWords": 4 }
   },
-  "host": { "type": "url" },
   "produces": { "type": [ ], "minLength": 1 },
   "consumes": { "type": [ ], "minLength": 1 },
   "schemes": { "type": [ ], "match": "https" },
-  "basePath": { "type": "", "match": "^\/.*[^\/]?"}
+  "basePath": { "type": "", "match": "^\/.*[^\/]?"},
+  "numberCheck": {"type": 1 }
 }

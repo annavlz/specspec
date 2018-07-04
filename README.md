@@ -20,7 +20,7 @@ Example:
   "info": {
     "version": {},
     "title": {},
-    "description": { "type": "", "minLength": 4 }
+    "description": { "type": "", "minWords": 4 }
   },
   "produces": { "type": [ ], "minLength": 1 },
   "consumes": { "type": [ ], "minLength": 1 },
@@ -32,6 +32,7 @@ Example:
 It can validate: 
 - existence of the key `{}`
 - type of the value `type: "" | 111 | [] | {} `
-- minimum length `minLength`
+- minimum number of words in a phrase `minWords`
+- minimum length of a list `minLength`
 - match to a RegEx `match: <RegEx>`
 
