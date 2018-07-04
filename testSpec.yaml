@@ -1,0 +1,14 @@
+swagger: '2.0'
+
+info:
+  version: "1.0.0"
+  title: Transactions
+  description: Retrieve information test test.
+produces:
+  - application/json
+consumes:
+  - application/json
+schemes:
+  - https
+basePath: /test/test/test
+numberCheck: 111
